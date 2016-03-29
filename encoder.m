@@ -1,9 +1,9 @@
-function y = encoder(x, k)
-    n = length(x) / k;
-    y = [];
+function Y = encoder(X, k)
+    n = length(X) / k;
+    Y = [];
     for i = 1:n
-      l = x(k*(i-1)+1: k*i);
-      l(k+1) = mod(sum(l), 2);
-      y = [y l];
+      L = X(k*(i-1)+1: k*i);
+      L(k+1) = mod(sum(L), 2);
+      Y = [Y L];
     endfor
 endfunction

@@ -1,3 +1,3 @@
-function y = generator(n)
-  y = round(rand(1, n));
+function Y = generator(n)
+  Y = round(rand(1, n));
 endfunction

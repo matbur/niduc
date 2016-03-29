@@ -1,8 +1,6 @@
-function [y z] = canal(x, sigma)
-  y = [];
-  z = [];
-  for i = 1:length(x)
-    y(i) = 5 * x(i) + normrnd(0, sigma);
-    z(i) = 5 * x(i);
+function Y = canal(X, sigma)
+  Y = [];
+  for i = 1:length(X)
+    Y(i) = 5 * X(i) + normrnd(0, sigma);
   endfor
 endfunction
