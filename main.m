@@ -9,3 +9,7 @@ E = encoder(G, k)
 C = canal(E, sigma)
 
 D = decoder(C, k)
+
+Z = ber(C, E)
+
+V = Ejar(C, E)
