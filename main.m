@@ -2,14 +2,8 @@ n = 20
 k = 3
 sigma = 1.5
 
-G = generator(n)
+[ber err] = ARQ(n, k, sigma)
 
-E = encoder(G, k)
-
-C = canal(E, sigma)
-
-D = decoder(C, k)
-
-Z = ber(C, E)
-
-V = Ejar(C, E)
+%Z = ber(C, E)
+%
+%V = Ejar(C, E)
