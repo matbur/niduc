@@ -1,6 +1,5 @@
 function [ber, err] = ARQ(n, k, sigma)
-  ber = 0;
-  err = 0;
+  ee = 0;
 
   G = generator(n);
   E = encoder(G, k);
@@ -8,19 +7,16 @@ function [ber, err] = ARQ(n, k, sigma)
 
   c = n / k;
   for i = 1 : c
-    b = i*(k+1)-k;
-    e = i*(k+1);
+    b = i * (k + 1) - k;
+    e = i * (k + 1);
     d = decoder(C(b:e));
     while d == 1
-      ber += 1;
+      ee += k;
       C(b:e) = canal(E(b:e), sigma);
       d = decoder(C(b:e));
     end
   end
-beer = 0;
-beer = (ber/c)*100;
-
-ee = 0;
-ee = ((c-ber)/c)*100;
+  ber = 100 * ee / n;
+  err = 100 * n / (n + ee);
 end
 
