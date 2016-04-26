@@ -17,4 +17,7 @@ function [ber, err] = ARQ(n, k, sigma)
       d = decoder(C(b:e));
     end
   end
+beer = 0;
+beer = ber/c;
 end
+
