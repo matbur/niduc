@@ -18,6 +18,9 @@ function [ber, err] = ARQ(n, k, sigma)
     end
   end
 beer = 0;
-beer = ber/c;
+beer = (ber/c)*100;
+
+ee = 0;
+ee = ((c-ber)/c)*100;
 end
 
