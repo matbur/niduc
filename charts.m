@@ -1,34 +1,53 @@
 n = 100;
-k = 4;
-sigma = 0 : .01 : 5;
+k = 10;
+sigma = 0 : .2 : 2;
+len = length(sigma);
 
-ber = [];
-err = [];
+ber = zeros(1, len);
+err = zeros(1, len);
 
-for i = 1 : length(sigma)
-  [ber(i) err(i)] = ARQ(n, k, sigma(i));
+for j = 1 : 100
+  for i = 1 : len;
+    [b, e] = ARQ(n, k, sigma(i));
+    ber(i) = ber(i) + b;
+    err(i) = err(i) + e;
+  end
 end
 
-figure(1);
-  subplot(2, 1, 1);
-  plot(sigma, ber);
+for i = 1 : len
+  ber(i) = ber(i) / len;
+  err(i) = err(i) / len;
+end
 
-  subplot(2, 1, 2);
-  plot(sigma, err);
+subplot(2, 2, 1);
+plot(sigma, ber);
+
+subplot(2, 2, 3);
+plot(sigma, err);
+
 
 sigma = 1.5;
-k = 1 : 100;
+k = 10 : 10 : 100;
+len = length(k);
 
-ber = [];
-err = [];
+ber = zeros(1, len);
+err = zeros(1, len);
 
-for i = 1 : length(k)
-  [ber(i) err(i)] = ARQ(n, k(i), sigma);
+for j = 1 : 100
+  for i = 1 : len;
+    [b, e] = ARQ(n, k(i), sigma);
+    ber(i) = ber(i) + b;
+    err(i) = err(i) + e;
+  end
 end
 
-figure(2);
-  subplot(2, 1, 1);
-  plot(k, ber);
+for i = 1 : len
+  ber(i) = ber(i) / len;
+  err(i) = err(i) / len;
+end
 
-  subplot(2, 1, 2);
-  plot(k, err);
+subplot(2, 2, 2);
+plot(k, ber);
+
+subplot(2, 2, 4);
+plot(k, err);

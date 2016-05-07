@@ -11,12 +11,12 @@ function [ber, err] = ARQ(n, k, sigma)
     e = i * (k + 1);
     d = decoder(C(b:e));
     while d == 1
-      ee += k;
+      ee = ee + k;
       C(b:e) = canal(E(b:e), sigma);
       d = decoder(C(b:e));
     end
   end
-  ber = 100 * ee / n;
-  err = 100 * n / (n + ee);
+  ber = ee / n;
+  err = n / (n + ee);
 end
 
