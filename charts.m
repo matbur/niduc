@@ -1,4 +1,4 @@
-n = 100;
+n = 10000;
 k = 10;
 sigma = 0 : .2 : 2;
 len = length(sigma);
@@ -20,10 +20,10 @@ for i = 1 : len
 end
 
 subplot(2, 2, 1);
-plot(sigma, ber);
+plot(sigma, ber), xlabel('sigma'), ylabel('BER'), title('Wykres 1: BER od sigmy');
 
 subplot(2, 2, 3);
-plot(sigma, err);
+plot(sigma, err), xlabel('sigma'), ylabel('ERR'), title('Wykres 2: ERR od sigmy');
 
 
 sigma = 1.5;
@@ -47,7 +47,7 @@ for i = 1 : len
 end
 
 subplot(2, 2, 2);
-plot(k, ber);
+plot(k, ber), xlabel('k'), ylabel('BER'), title('Wykres 3: BER od k');
 
 subplot(2, 2, 4);
-plot(k, err);
+plot(k, err), xlabel('k'), ylabel('ERR'), title('Wykres 4: ERR od k');
