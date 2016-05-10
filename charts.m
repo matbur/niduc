@@ -1,12 +1,13 @@
 n = 1000;
-k = 100;
-sigma = 0 : .2 : 1.5;
+k = 10;
+sigma = 0 : .3 : 2;
 len = length(sigma);
+rep = 10;
 
 ber = zeros(1, len);
 eff = zeros(1, len);
 
-for j = 1 : 100
+for j = 1 : rep
   for i = 1 : len;
     [b, e] = ARQ(n, k, sigma(i));
     ber(i) = ber(i) + b;
@@ -15,8 +16,8 @@ for j = 1 : 100
 end
 
 for i = 1 : len
-  ber(i) = ber(i) / len;
-  eff(i) = eff(i) / len;
+  ber(i) = ber(i) / rep;
+  eff(i) = eff(i) / rep;
 end
 
 subplot(2, 2, 1);
@@ -33,7 +34,7 @@ len = length(k);
 ber = zeros(1, len);
 eff = zeros(1, len);
 
-for j = 1 : 100
+for j = 1 : rep
   for i = 1 : len;
     [b, e] = ARQ(n, k(i), sigma);
     ber(i) = ber(i) + b;
@@ -42,8 +43,8 @@ for j = 1 : 100
 end
 
 for i = 1 : len
-  ber(i) = ber(i) / len;
-  eff(i) = eff(i) / len;
+  ber(i) = ber(i) / rep;
+  eff(i) = eff(i) / rep;
 end
 
 subplot(2, 2, 2);
@@ -51,3 +52,4 @@ plot(k, ber), xlabel('k'), ylabel('BER'), title('Wykres 3: BER od k');
 
 subplot(2, 2, 4);
 plot(k, eff), xlabel('k'), ylabel('EFF'), title('Wykres 4: EFF od k');
+

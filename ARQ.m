@@ -10,13 +10,12 @@ function [ber, eff] = ARQ(n, k, sigma)
     b = i * (k + 1) - k;
     e = i * (k + 1);
     d = decoder(C(b:e));
-    ee = ee + k;
     while d == 1
+      ee = ee + k;
       C(b:e) = canal(E(b:e), sigma);
       d = decoder(C(b:e));
-      ee = ee + k;
     end
   end
   ber = ee / n;
-  eff = n / (n + ee);
+  eff = n / (n + ee + c);
 end
