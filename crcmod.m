@@ -1,4 +1,4 @@
-#m przyjmuje wartości 1, 4, 8, 16
+%m przyjmuje wartoĹ›ci 1, 4, 8, 16
 function Z = crcmod (X, m)
 
   P = ones(1, m+1);
@@ -10,7 +10,7 @@ function Z = crcmod (X, m)
     P = [1 1 1 0 1 0 1 0 1];
   elseif (m == 16)
     P = [1 1 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1];
-  endif
+  end
   
   Z = [X zeros(1,m)];
   n = length(X);
@@ -18,10 +18,10 @@ function Z = crcmod (X, m)
   for i = 1 : n
     if (Z(i) == 0)
       continue;
-    endif
+    end
     
     Z(i:i+m) = xor(Z(i:i+m),P);
-  endfor
+  end
 
   Z = Z(n+1:n+m);
 
