@@ -9,5 +9,5 @@ function y = decoder(X,m)
     y = 0;
   else 
     y = 1;
-  endif
+  end
 end
