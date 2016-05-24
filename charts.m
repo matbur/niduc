@@ -1,6 +1,6 @@
-n = 1000;
-k = 10;
-m = 4; #parametr m, jest to odpowiednie CRC {1, 4, 8 lub 16}
+n = 1000;  % liczba bitow
+k = 10;  % liczba pakietow
+m = 16; % do wyboru jakie crc 1 ,4 ,8 , 16
 sigma = 0 : .3 : 2;
 len = length(sigma);
 rep = 10;
