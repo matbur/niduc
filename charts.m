@@ -1,5 +1,5 @@
 n = 1000;  % liczba bitow
-k = 10;  % liczba pakietow
+k = 10;  % pakiety po k bitow 
 m = 16; % do wyboru jakie crc 1 ,4 ,8 , 16
 sigma = 0 : .3 : 2;
 len = length(sigma);
