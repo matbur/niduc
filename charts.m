@@ -1,5 +1,6 @@
 n = 1000;
 k = 10;
+m = 4;
 sigma = 0 : .3 : 2;
 len = length(sigma);
 rep = 10;
@@ -9,7 +10,7 @@ eff = zeros(1, len);
 
 for j = 1 : rep
   for i = 1 : len;
-    [b, e] = ARQ(n, k, sigma(i));
+    [b, e] = ARQ(n, k, sigma(i), m);
     ber(i) = ber(i) + b;
     eff(i) = eff(i) + e;
   end
@@ -36,7 +37,7 @@ eff = zeros(1, len);
 
 for j = 1 : rep
   for i = 1 : len;
-    [b, e] = ARQ(n, k(i), sigma);
+    [b, e] = ARQ(n, k(i), sigma, m);
     ber(i) = ber(i) + b;
     eff(i) = eff(i) + e;
   end
