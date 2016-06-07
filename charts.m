@@ -21,6 +21,8 @@ for i = 1 : len
   eff(i) = eff(i) / rep;
 end
 
+figure(1);
+
 subplot(2, 2, 1);
 plot(sigma, ber), xlabel('sigma'), ylabel('BER'), title('Wykres 1: BER od sigmy');
 
@@ -53,4 +55,8 @@ plot(k, ber), xlabel('k'), ylabel('BER'), title('Wykres 3: BER od k');
 
 subplot(2, 2, 4);
 plot(k, eff), xlabel('k'), ylabel('EFF'), title('Wykres 4: EFF od k');
+
+figure(2);
+plot(eff, ber, '+'), xlabel('eff'), ylabel('BER'), title('Wykres 5 (chmura): BER od eff');
+gname(ber);
 
