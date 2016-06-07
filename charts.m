@@ -58,5 +58,9 @@ plot(k, eff), xlabel('k'), ylabel('EFF'), title('Wykres 4: EFF od k');
 
 figure(2);
 plot(eff, ber, '+'), xlabel('eff'), ylabel('BER'), title('Wykres 5 (chmura): BER od eff');
-gname(ber);
+gname(ber); 
+
+figure(3);
+plot(ber, eff, '+'), xlabel('BER'), ylabel('eff'), title('Wykres 6 (chmura): EFF od ber');
+gname(eff);
 
